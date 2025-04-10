@@ -17,13 +17,24 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         //start with the mousemovement behavior
-        movementMode = KeyboardMovement;
+        movementMode = MouseMovement;
     }
 
     // Update is called once per frame
     void Update()
     {
         movementMode();
+
+        //garbage if nesting here
+        if(Input.GetKeyDown(KeyCode.M)){
+            if(mouseControl) {
+                mouseControl = false;
+                movementMode = KeyboardMovement;
+            } else {
+                mouseControl = true;
+                movementMode = MouseMovement;
+            }
+        }
     }
 
     //"glues" the player to the mouse
