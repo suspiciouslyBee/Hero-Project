@@ -6,6 +6,7 @@ Required features:
 
     Using prefabs for objects
     Key-M toggles between mouse and keyboard control
+      DONE
     Space Bar fires eggs every 0.2 seconds
     Eggs travel at 40 unit/sec
     Eggs are destroyed when it hits enemy or goes out of the screen

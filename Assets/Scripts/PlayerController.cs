@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public float verticalInput;
     public float keyboardSpeed = 10.0f;
     public GameManager Instance;
+    public float fireSpeed;
+    public GameObject projectile;
 
 
     private bool mouseControl = true;
@@ -35,13 +37,22 @@ public class PlayerController : MonoBehaviour
                 movementMode = MouseMovement;
             }
         }
+
+
+        if (Input.GetKeyDown(KeyCode.Space)){
+            //launch projectile
+            Instantiate(projectile, transform.position, 
+                        projectile.transform.rotation);
+        }
     }
 
     //"glues" the player to the mouse
     void MouseMovement() {
         //corrects the screen to world pos to infront of the cam
-        Vector3 correctedPos = Camera.main.ScreenToWorldPoint(Input.mousePosition) +  new Vector3(0,0,1);
+        Vector3 correctedPos = Camera.main.ScreenToWorldPoint(Input.mousePosition) 
+                                + Vector3.forward;
         transform.position = correctedPos;
+        
 
         //boundary checking is not neccisary here because if it goes out of bounds... it will
         //easily snap back to the mouse
