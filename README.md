@@ -10,6 +10,7 @@ Required features:
     Eggs travel at 40 unit/sec
     Eggs are destroyed when it hits enemy or goes out of the screen
     There are always 10 enemies
+      IMPLEMENTED, UNTESTED
     Enemies are destroyed if they touch the Hero (arrow)
     Enemies lose 20% of their health, their alpha value becomes 80% of their previous value, when they collide with an egg. The 4th collision with an egg destroys the enemy. 
     When enemies are destroyed, they respawn at a random point at 90% os screen boundaries
