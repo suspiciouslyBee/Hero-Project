@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -8,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public float verticalInput;
     public float keyboardSpeed = 10.0f;
     public GameManager Instance;
+    public float fireSpeed;
+    public GameObject projectile;
 
 
     private bool mouseControl = true;
@@ -18,6 +21,7 @@ public class PlayerController : MonoBehaviour
     {
         //start with the mousemovement behavior
         movementMode = MouseMovement;
+        StartCoroutine(SpawnProjectile());
     }
 
     // Update is called once per frame
@@ -35,13 +39,36 @@ public class PlayerController : MonoBehaviour
                 movementMode = MouseMovement;
             }
         }
+
+
+
+    }
+
+    //stack overflow moment. but also reusing parts of my own code. heh
+    IEnumerator SpawnProjectile()
+    {
+        while (true)
+        {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                //launch projectile
+                Instantiate(projectile, transform.position,
+                            projectile.transform.rotation);
+
+                yield return new WaitForSeconds(fireSpeed);
+            }
+
+            yield return null;
+        }
     }
 
     //"glues" the player to the mouse
     void MouseMovement() {
         //corrects the screen to world pos to infront of the cam
-        Vector3 correctedPos = Camera.main.ScreenToWorldPoint(Input.mousePosition) +  new Vector3(0,0,1);
+        Vector3 correctedPos = Camera.main.ScreenToWorldPoint(Input.mousePosition) 
+                                + Vector3.forward;
         transform.position = correctedPos;
+        
 
         //boundary checking is not neccisary here because if it goes out of bounds... it will
         //easily snap back to the mouse
