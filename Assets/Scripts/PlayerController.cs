@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour
     {
         //start with the mousemovement behavior
         movementMode = MouseMovement;
+        StartCoroutine(SpawnProjectile());
     }
 
     // Update is called once per frame
@@ -39,10 +41,24 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Space)){
-            //launch projectile
-            Instantiate(projectile, transform.position, 
-                        projectile.transform.rotation);
+
+    }
+
+    //stack overflow moment. but also reusing parts of my own code. heh
+    IEnumerator SpawnProjectile()
+    {
+        while (true)
+        {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                //launch projectile
+                Instantiate(projectile, transform.position,
+                            projectile.transform.rotation);
+
+                yield return new WaitForSeconds(fireSpeed);
+            }
+
+            yield return null;
         }
     }
 

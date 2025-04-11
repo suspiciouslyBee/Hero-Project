@@ -469,7 +469,7 @@ MonoBehaviour:
   verticalInput: 0
   keyboardSpeed: 10
   Instance: {fileID: 620684904}
-  fireSpeed: 0
+  fireSpeed: 0.2
   projectile: {fileID: 7096523961590722515, guid: 99ad82b8de274e1a18091dd944dfdf9c, type: 3}
 --- !u!1001 &1110521020569001600
 PrefabInstance:
