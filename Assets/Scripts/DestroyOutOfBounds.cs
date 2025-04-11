@@ -4,7 +4,7 @@ public class DestroyOutOfBounds : MonoBehaviour
 {
 
 
-    public GameManager Instance;
+    //public static GameManager Instance;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,9 +16,9 @@ public class DestroyOutOfBounds : MonoBehaviour
     {
 
         //Bounds check
-        Vector3 correctedPos = Instance.playerCam.WorldToViewportPoint(transform.position);
-        float horizontalBound = Instance.playerCam.ScreenToWorldPoint(Vector3.right).x;
-        float verticalBound = Instance.playerCam.ScreenToWorldPoint(Vector3.up).y;
+        Vector3 correctedPos = GameManager.Instance.playerCam.WorldToViewportPoint(transform.position);
+        float horizontalBound = GameManager.Instance.playerCam.ScreenToWorldPoint(Vector3.right).x;
+        float verticalBound = GameManager.Instance.playerCam.ScreenToWorldPoint(Vector3.up).y;
 
 
         //bounds checking before moving
