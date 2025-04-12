@@ -14,10 +14,10 @@ Required features:
     Eggs are destroyed when it hits enemy or goes out of the screen
         DONE
     There are always 10 enemies
-      BROKEN
+      DONE?
     Enemies are destroyed if they touch the Hero (arrow)
     Enemies lose 20% of their health, their alpha value becomes 80% of their previous value, when they collide with an egg. The 4th collision with an egg destroys the enemy. 
     When enemies are destroyed, they respawn at a random point at 90% os screen boundaries
-      DONE?
+      BROKEN
     Application status is displayed: Hero Mode, Number of eggs, Enemy count, Enemies Destroyed
     Key-Q quits or Pauses the application

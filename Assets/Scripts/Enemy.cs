@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private float health = 1;
-    private float maxHealth = 1;
+    public float health = 1;
+    public float maxHealth = 1;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,8 +18,12 @@ public class Enemy : MonoBehaviour
         UpdateColor();
 
 
-        if (health < 0)
+        if (health <= 0)
         {
+            //garbage, but this will do
+
+            GameManager.Instance.SpawnEnemySomewhere();
+
             Destroy(gameObject);
         }
         
