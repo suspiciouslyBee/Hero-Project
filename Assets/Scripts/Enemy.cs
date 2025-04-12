@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;                                                                                           
 
 public class Enemy : MonoBehaviour
@@ -37,9 +38,13 @@ public class Enemy : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().color = hopper;
     }
 
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void ChangeHealth(float sumOrDifference)
     {
-        //TODO hi
+        health += sumOrDifference;
+    }
+
+    internal float GetMaxHealth()
+    {
+        return maxHealth;
     }
 }

@@ -3,15 +3,15 @@ using UnityEngine;
 public class Projectile: MonoBehaviour
 {
     public float speed;
-
+    //public float damage;
     
     //for the assignment its manually set to 20% of the fighter hp, wanted modular for different
-    ///types of projectiles
-    public float damage;
+    //types of projectiles
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        //gameObject.GetComponent<DamageEnemyOnHit>().damage = damage;
     }
 
     // Update is called once per frame
@@ -26,5 +26,7 @@ public class Projectile: MonoBehaviour
     {
         transform.Translate(Vector3.up * Time.deltaTime * speed);
     }
+
+
 
 }
