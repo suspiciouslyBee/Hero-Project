@@ -19,7 +19,7 @@ public class DamageEnemyOnHit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        Debug.Log("Hit Something");
 
 
         if (other.CompareTag("Enemy"))
