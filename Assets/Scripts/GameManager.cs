@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
         for(int i = 0; i < enemyCount; i++) {
             SpawnEnemySomewhere();
         }
+
+        
     }
 
     // Update is called once per frame
@@ -38,16 +40,47 @@ public class GameManager : MonoBehaviour
 
         //get the ranges by getting the playspace, then halving it to get one half of each axis
         //range
-        float x = (Screen.width * playableSpace);
-        float y = (Screen.height * playableSpace);
-
         
+        float x = playableSpace;
+        float y = playableSpace; 
 
+        //get the raw random number
+        Vector3 correctedPos = new Vector3(Random.Range(0, x), Random.Range(0, y), 1);
 
-        Instantiate(enemy, playerCam.ScreenToWorldPoint(new Vector3(Random.Range(0, x),
-                                                         Random.Range(0, y), 1))
-                            , Quaternion.identity);
+        //center it
+        Debug.Log(correctedPos);
+        correctedPos += new Vector3((1 - playableSpace) /2, (1 - playableSpace) /2, 0);
+        correctedPos = playerCam.ViewportToWorldPoint(correctedPos);
+        Debug.Log(correctedPos);
+
+        //correctedPos.x *= playableSpace;
+        //correctedPos.y *= playableSpace;
+
+        Instantiate(enemy, correctedPos + transform.position, Quaternion.identity);
 
         return;
     }
+
+    /* broken debug code
+    void OnDrawGizmosSelected()
+    {
+
+        //float x = 1.5f * playableSpace;
+        //float y = 1.5f * playableSpace;
+
+
+
+
+        Vector3 correctedPos = playerCam.ViewportToWorldPoint(new Vector3(playableSpace, playableSpace, 1));
+        Debug.Log(correctedPos);
+        Debug.Log(playerCam.ViewportToWorldPoint(new Vector3(1, 1, 1)));
+
+
+
+        // Draw a yellow cube at the transform position
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(transform.position, correctedPos);
+    }
+
+    */
 }

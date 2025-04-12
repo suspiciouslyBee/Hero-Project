@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float horizontalInput;
     public float verticalInput;
     public float keyboardSpeed = 10.0f;
-    public GameManager Instance;
+    
     public float fireSpeed;
     public GameObject projectile;
 
@@ -80,9 +80,10 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
-        Vector3 correctedPos = Instance.playerCam.WorldToViewportPoint(transform.position);
-        float horizontalBound = Instance.playerCam.ScreenToWorldPoint(Vector3.right).x;
-        float verticalBound = Instance.playerCam.ScreenToWorldPoint(Vector3.up).y;
+        Vector3 correctedPos = GameManager.Instance.playerCam.WorldToViewportPoint(
+                                transform.position);
+        float horizontalBound = GameManager.Instance.playerCam.ScreenToWorldPoint(Vector3.right).x;
+        float verticalBound = GameManager.Instance.playerCam.ScreenToWorldPoint(Vector3.up).y;
 
 
         //bounds checking before moving

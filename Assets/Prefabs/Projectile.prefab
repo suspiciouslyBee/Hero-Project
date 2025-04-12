@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 3208908875079921899}
   - component: {fileID: 828277220282173830}
   - component: {fileID: 4340628858927371895}
-  - component: {fileID: 7539578130595604854}
   - component: {fileID: 7773793181226340296}
   - component: {fileID: 4653319795347405241}
+  - component: {fileID: -4360116413458111354}
   m_Layer: 0
   m_Name: Projectile
-  m_TagString: Player
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +100,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7096523961590722515}
-  m_BodyType: 2
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -186,19 +186,6 @@ PolygonCollider2D:
       - {x: 0.38, y: 0.04}
       - {x: 0.66999996, y: 0.04}
   m_UseDelaunayMesh: 0
---- !u!114 &7539578130595604854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7096523961590722515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0394edfa4f0a95de38e0615662d7baa9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playableSpace: 1
 --- !u!114 &7773793181226340296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68df66c14865d680ea8beebfe8a6b522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
+  speed: 4
 --- !u!114 &4653319795347405241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,3 +211,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc2f1d24de7127deabff99f80c78aec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-4360116413458111354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7096523961590722515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b26ee4dcec13b82408f99e3f85b281a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0.25
+  instantKill: 0
