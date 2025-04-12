@@ -36,4 +36,10 @@ public class Enemy : MonoBehaviour
 
         gameObject.GetComponent<SpriteRenderer>().color = hopper;
     }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //TODO hi
+    }
 }
