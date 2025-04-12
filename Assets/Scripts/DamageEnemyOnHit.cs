@@ -24,6 +24,8 @@ public class DamageEnemyOnHit : MonoBehaviour
 
         if (other.CompareTag("Enemy"))
         {
+
+            Debug.Log("Hit Enemy");
             Enemy subject = other.GetComponent<Enemy>();
             subject.ChangeHealth(-damage);
 
