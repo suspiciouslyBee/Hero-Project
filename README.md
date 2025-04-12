@@ -16,6 +16,7 @@ Required features:
     There are always 10 enemies
       DONE?
     Enemies are destroyed if they touch the Hero (arrow)
+      DONE
     Enemies lose 20% of their health, their alpha value becomes 80% of their previous value, when they collide with an egg. The 4th collision with an egg destroys the enemy. 
     When enemies are destroyed, they respawn at a random point at 90% os screen boundaries
       BROKEN
