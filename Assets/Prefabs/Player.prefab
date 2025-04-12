@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4946987568137201469}
   - component: {fileID: 9148717458853717161}
   - component: {fileID: -9118414523812915451}
+  - component: {fileID: 1350645409565976148}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -98,7 +99,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6259662226403071120}
-  m_BodyType: 2
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -198,3 +199,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   instantKill: 1
+--- !u!114 &1350645409565976148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6259662226403071120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2a703c6237b7c5788e30313c12d15ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalInput: 0
+  verticalInput: 0
+  keyboardSpeed: 10
+  fireSpeed: 0.2
+  projectile: {fileID: 7096523961590722515, guid: 99ad82b8de274e1a18091dd944dfdf9c, type: 3}

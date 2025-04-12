@@ -34,7 +34,7 @@ public class DamageEnemyOnHit : MonoBehaviour
             //readable... for now
             if (instantKill)
             {
-                subject.ChangeHealth(subject.GetMaxHealth());
+                subject.ChangeHealth(-subject.GetMaxHealth());
             }
         }
     }
