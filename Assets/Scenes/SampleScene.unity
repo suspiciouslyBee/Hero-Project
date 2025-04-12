@@ -457,6 +457,10 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2319526102248606073, guid: b814155374b6b634297c560a972eeb30, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7663330192314195088, guid: b814155374b6b634297c560a972eeb30, type: 3}
       propertyPath: m_Name
       value: Enemy

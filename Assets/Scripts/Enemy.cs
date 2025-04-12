@@ -17,8 +17,9 @@ public class Enemy : MonoBehaviour
 
         UpdateColor();
 
-
-        if (health <= 0)
+        
+        //thanks to how floats are done, need to cut off some floor here
+        if (Math.Round(health, 2) <= 0)
         {
             //garbage, but this will do
 
@@ -32,7 +33,7 @@ public class Enemy : MonoBehaviour
     private void UpdateColor()
     {
         //alpha is a percentage
-        float normalizedAlpha = Mathf.Clamp((health / maxHealth) * 100, 0, 100);
+        float normalizedAlpha = Mathf.Clamp((health /maxHealth), 0, 100);
 
         //cant edit alpha directly must copy it temporarally
         Color hopper = gameObject.GetComponent<SpriteRenderer>().color;
@@ -45,6 +46,7 @@ public class Enemy : MonoBehaviour
     public void ChangeHealth(float sumOrDifference)
     {
         health += sumOrDifference;
+        //Debug.Log(health);
     }
 
     internal float GetMaxHealth()

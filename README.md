@@ -5,6 +5,7 @@ This is the hero project prompt for my intro to game dev class. It implements a 
 Required features:
 
     Using prefabs for objects
+        For all non-singleton objects
     Key-M toggles between mouse and keyboard control
       DONE
     Space Bar fires eggs every 0.2 seconds
@@ -19,6 +20,6 @@ Required features:
       DONE
     Enemies lose 20% of their health, their alpha value becomes 80% of their previous value, when they collide with an egg. The 4th collision with an egg destroys the enemy. 
     When enemies are destroyed, they respawn at a random point at 90% os screen boundaries
-      BROKEN
+      Done
     Application status is displayed: Hero Mode, Number of eggs, Enemy count, Enemies Destroyed
     Key-Q quits or Pauses the application

@@ -19,13 +19,13 @@ public class DamageEnemyOnHit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Hit Something");
+        //Debug.Log("Hit Something");
 
 
         if (other.CompareTag("Enemy"))
         {
 
-            Debug.Log("Hit Enemy");
+            //Debug.Log("Hit Enemy");
             Enemy subject = other.GetComponent<Enemy>();
             subject.ChangeHealth(-damage);
 
