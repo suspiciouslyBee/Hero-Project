@@ -1,4 +1,4 @@
-using UnityEngine;
+using UnityEngine;                                                                                           
 
 public class Enemy : MonoBehaviour
 {
@@ -26,6 +26,7 @@ public class Enemy : MonoBehaviour
 
     private void UpdateColor()
     {
+        //alpha is a percentage
         float normalizedAlpha = Mathf.Clamp((health / maxHealth) * 100, 0, 100);
 
         //cant edit alpha directly must copy it temporarally
