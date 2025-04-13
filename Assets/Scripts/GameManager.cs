@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class GameManager : MonoBehaviour
 {
     public GameObject enemy;
@@ -7,6 +8,8 @@ public class GameManager : MonoBehaviour
     public float playableSpace = 0.9f;
     public Camera playerCam;
     public static GameManager Instance;
+
+    public int score = 0;
 
     private void Awake()
     {
