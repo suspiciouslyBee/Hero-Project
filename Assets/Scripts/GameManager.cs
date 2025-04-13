@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class GameManager : MonoBehaviour
 {
     public GameObject enemy;
@@ -7,6 +8,8 @@ public class GameManager : MonoBehaviour
     public float playableSpace = 0.9f;
     public Camera playerCam;
     public static GameManager Instance;
+
+    public int score = 0;
 
     private void Awake()
     {
@@ -61,26 +64,5 @@ public class GameManager : MonoBehaviour
         return;
     }
 
-    /* broken debug code
-    void OnDrawGizmosSelected()
-    {
 
-        //float x = 1.5f * playableSpace;
-        //float y = 1.5f * playableSpace;
-
-
-
-
-        Vector3 correctedPos = playerCam.ViewportToWorldPoint(new Vector3(playableSpace, playableSpace, 1));
-        Debug.Log(correctedPos);
-        Debug.Log(playerCam.ViewportToWorldPoint(new Vector3(1, 1, 1)));
-
-
-
-        // Draw a yellow cube at the transform position
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(transform.position, correctedPos);
-    }
-
-    */
 }

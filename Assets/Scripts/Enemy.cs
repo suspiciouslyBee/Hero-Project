@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour
             //garbage, but this will do
 
             GameManager.Instance.SpawnEnemySomewhere();
+            GameManager.Instance.score++;
 
             Destroy(gameObject);
         }

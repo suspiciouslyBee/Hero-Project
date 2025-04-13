@@ -25,4 +25,5 @@ Required features:
     When enemies are destroyed, they respawn at a random point at 90% os screen boundaries
       Done
     Application status is displayed: Hero Mode, Number of eggs, Enemy count, Enemies Destroyed
+        DONE
     Key-Q quits or Pauses the application
