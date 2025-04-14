@@ -1,4 +1,7 @@
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
+
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -12,6 +15,7 @@ public class GameManager : MonoBehaviour
     public float playableSpace = 0.9f;
     public Camera playerCam;
     public static GameManager Instance;
+    public GameObject shroud;
 
     public int score = 0;
 
@@ -55,10 +59,10 @@ public class GameManager : MonoBehaviour
         Vector3 correctedPos = new Vector3(Random.Range(0, x), Random.Range(0, y), 1);
 
         //center it
-        Debug.Log(correctedPos);
+        //Debug.Log(correctedPos);
         correctedPos += new Vector3((1 - playableSpace) /2, (1 - playableSpace) /2, 0);
         correctedPos = playerCam.ViewportToWorldPoint(correctedPos);
-        Debug.Log(correctedPos);
+        //Debug.Log(correctedPos);
 
         //correctedPos.x *= playableSpace;
         //correctedPos.y *= playableSpace;
@@ -71,7 +75,11 @@ public class GameManager : MonoBehaviour
     //Halts the game
     public void Exit()
     {
-        
+
+        //Due to WebGL being unable to close, it hangs. so here is a stupid hotfix
+
+        shroud.SetActive(true);
+
 #if UNITY_EDITOR
         EditorApplication.ExitPlaymode();
 #else
