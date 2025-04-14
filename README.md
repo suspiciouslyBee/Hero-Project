@@ -27,3 +27,4 @@ Required features:
     Application status is displayed: Hero Mode, Number of eggs, Enemy count, Enemies Destroyed
         DONE
     Key-Q quits or Pauses the application
+        DONE

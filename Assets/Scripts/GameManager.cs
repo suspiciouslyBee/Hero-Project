@@ -1,5 +1,9 @@
 using UnityEngine;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 
 public class GameManager : MonoBehaviour
 {
@@ -62,6 +66,17 @@ public class GameManager : MonoBehaviour
         Instantiate(enemy, correctedPos + transform.position, Quaternion.identity);
 
         return;
+    }
+
+    //Halts the game
+    public void Exit()
+    {
+        
+#if UNITY_EDITOR
+        EditorApplication.ExitPlaymode();
+#else
+        Application.Quit();
+#endif
     }
 
 

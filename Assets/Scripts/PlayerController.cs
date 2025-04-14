@@ -40,7 +40,10 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            GameManager.Instance.Exit();
+        }
 
     }
 
